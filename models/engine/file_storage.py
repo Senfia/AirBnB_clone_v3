@@ -80,4 +80,12 @@ class FileStorage:
 
     def count(self, cls=None):
         '''class that is (optional)'''
-        return (len(self.all(cls)))
+        if cls:
+            count = 0
+            for key, obj in self.__objects.items():
+                if obj.__class__ == cls:
+                    count += 1
+            return count
+        else:
+            return len(self.__objects)
+        # return (len(self.all(cls)))
