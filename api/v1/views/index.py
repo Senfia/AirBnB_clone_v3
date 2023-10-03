@@ -26,4 +26,4 @@ def object_status():
                "reviews": 'Review', "states": 'State', "users": 'User'}
     for key, value in objects.items():
         objects[key] = storage.count(value)
-    return jsonify(objects)i
+    return jsonify(objects)
